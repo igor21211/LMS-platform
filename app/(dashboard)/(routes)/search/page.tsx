@@ -7,7 +7,7 @@ import { getCourses } from '@/actions/get-courses';
 import { CoursesList } from './_components/courses-list';
 
 interface SearchPageProps {
-  searchParams: { title: string; categoryId: string };
+  searchParams: Promise<{ title: string; categoryId: string }>;
 }
 
 const SearchPage = async ({ searchParams }: SearchPageProps) => {

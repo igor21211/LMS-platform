@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 export default async function CoursePage({
   params,
 }: {
-  params: { courseId: string };
+  params: Promise<{ courseId: string }>;
 }) {
   const { courseId } = await params;
   const course = await db.course.findUnique({
