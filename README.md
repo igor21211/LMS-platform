@@ -1,5 +1,7 @@
 # LMS Platform
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-green)](https://lms-platform-sandy.vercel.app/)
+
 A multifunctional e-learning platform built with Next.js, Prisma, and TypeScript for creating, searching, and taking online courses.
 
 ---
