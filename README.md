@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LMS Platform
 
-## Getting Started
+A multifunctional e-learning platform built with Next.js, Prisma, and TypeScript for creating, searching, and taking online courses.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Quick Start
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Install dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Configure your .env file:**  
+   Copy `.env.example` to `.env` and set your database and service credentials.
 
-## Learn More
+3. **Apply migrations and generate Prisma Client:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npx prisma migrate deploy
+   npx prisma generate
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Seed the database with initial data:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npx ts-node scripts/seed.ts
+   ```
 
-## Deploy on Vercel
+5. **Start the development server:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 📦 Project Structure
+
+- `app/` — Main pages, routes, and layouts
+- `components/` — Reusable UI components
+- `actions/` — Server actions for courses, analytics, and progress
+- `lib/` — Utilities, database, and integrations (Stripe, uploadthing, etc.)
+- `prisma/` — Prisma database schema
+- `scripts/` — Database seeding scripts
+- `public/` — Static files and icons
+
+---
+
+## 🧩 Main Features
+
+- **Categories & Course Search** — Filter by category, search by title
+- **Dashboard** — View purchased and created courses, analytics
+- **Course Purchase & Progress** — Track progress, chapters, access by purchase
+- **Stripe Integration** — Course payments
+- **File Uploads** — uploadthing support
+- **User Roles** — Teacher/Student
+
+---
+
+## 🛠️ Scripts
+
+- `npm run dev` — Start the dev server
+- `npm run build` — Build the app
+- `npx ts-node scripts/seed.ts` — Seed the database with initial categories and test data
+
+---
+
+## 🗄️ Database
+
+- Schema is defined in `prisma/schema.prisma`
+- To apply migrations:
+  ```bash
+  npx prisma migrate deploy
+  ```
+- To generate the client:
+  ```bash
+  npx prisma generate
+  ```
+
+---
+
+## 📝 Technologies
+
+- **Next.js** (App Router)
+- **TypeScript**
+- **Prisma ORM**
+- **PostgreSQL** (or any supported DB)
+- **Stripe API**
+- **Tailwind CSS**
+- **React Icons**
+
+---
+
+## 📂 Example Files
+
+- `scripts/seed.ts` — Script for seeding categories
+- `actions/get-courses.ts` — Fetching courses with user progress
+- `components/course-progress.tsx` — Progress display component
+
+---
+
+## 💡 Tips
+
+- For local development, Node.js 18+ is recommended.
+- Generated Prisma files are ignored by ESLint (see `eslint.config.mjs`).
+- For deployment on Vercel or other platforms, follow the [official Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).
+
+---
+
+## 📬 Contribution
+
+If you want to suggest improvements or found a bug — open an issue or pull request!
