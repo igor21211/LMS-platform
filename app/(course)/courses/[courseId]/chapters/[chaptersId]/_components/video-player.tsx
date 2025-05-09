@@ -71,7 +71,7 @@ export const VideoPlayer = ({
           <p className="text-sm">This chapter is locked.</p>
         </div>
       )}
-      {!isLocked && isReady && (
+      {!isLocked && (
         <MuxPlayer
           className={cn(!isReady && 'hidden')}
           title={title}

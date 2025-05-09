@@ -37,6 +37,7 @@ const ChapterPage = async ({
   }
 
   const isLocked = !chapter.isFree && !purchase;
+  console.log(isLocked);
   const completeOnEnd = !!purchase && !userProgress?.isCompleted;
 
   return (
